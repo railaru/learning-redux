@@ -18,21 +18,26 @@ export class Posts extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <h2>Posts</h2>
         {this.props.posts ? (
           <ul>
             {this.props.posts.map(post => (
               <li key={post.id}>
                 <h2>{post.title}</h2>
+                <button type="button" className="btn btn-danger float-right">
+                  X
+                </button>
                 <p>{post.body}</p>
               </li>
             ))}
           </ul>
         ) : (
-          <p>loading...</p>
+          <div className="spinner-border text-primary" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
         )}
-      </div>
+      </>
     );
   }
 }

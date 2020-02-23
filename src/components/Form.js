@@ -32,7 +32,7 @@ export class Form extends Component {
         <h2>Add post</h2>
         <form>
           <div className="form-group" onSubmit={this.handleSubmit}>
-            <label for="title">Title</label>
+            <label htmlFor="title">Title</label>
             <input
               type="text"
               className="form-control"
@@ -43,9 +43,9 @@ export class Form extends Component {
             />
           </div>
           <div className="form-group">
-            <label for="body">Body</label>
+            <label htmlFor="body">Body</label>
             <textarea
-              class="form-control"
+              className="form-control"
               id="body"
               rows="3"
               onChange={e => this.setState({ body: e.target.value })}
