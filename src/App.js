@@ -10,7 +10,7 @@ import Form from "./components/Form";
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
+      <div className="container mt-4">
         <Form />
         <hr />
         <Posts />

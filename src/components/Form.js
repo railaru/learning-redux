@@ -28,31 +28,35 @@ export class Form extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <h2>Add post</h2>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <label>Title</label>
-            <br />
+        <form>
+          <div className="form-group" onSubmit={this.handleSubmit}>
+            <label for="title">Title</label>
             <input
               type="text"
-              name="title"
+              className="form-control"
+              id="title"
+              aria-describedby="emailHelp"
               onChange={e => this.setState({ title: e.target.value })}
               value={this.state.title}
-            ></input>
+            />
           </div>
-          <div>
-            <label>Text body</label>
-            <br />
+          <div className="form-group">
+            <label for="body">Body</label>
             <textarea
-              name="body"
+              class="form-control"
+              id="body"
+              rows="3"
               onChange={e => this.setState({ body: e.target.value })}
               value={this.state.body}
             />
           </div>
-          <button type="submit">add</button>
+          <button type="submit" className="btn btn-primary">
+            Add
+          </button>
         </form>
-      </div>
+      </>
     );
   }
 }
