@@ -16,6 +16,10 @@ export class Posts extends Component {
     }
   }
 
+  handlePostDelete = id => {
+    console.log("delete id: " + id);
+  };
+
   render() {
     return (
       <>
@@ -25,7 +29,11 @@ export class Posts extends Component {
             {this.props.posts.map(post => (
               <li key={post.id}>
                 <h2>{post.title}</h2>
-                <button type="button" className="btn btn-danger float-right">
+                <button
+                  type="button"
+                  className="btn btn-danger float-right ml-3"
+                  onClick={() => this.handlePostDelete(post.id)}
+                >
                   X
                 </button>
                 <p>{post.body}</p>

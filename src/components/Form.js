@@ -16,7 +16,6 @@ export class Form extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.setState({ isSending: true });
 
     const post = {
       title: this.state.title,
